@@ -1,7 +1,7 @@
 # Личный проект «Большое путешествие» [![Build status][travis-image]][travis-url]
 
-* Студент: [Tikhon Izmailov](https://up.htmlacademy.ru/ecmascript/11/user/967107).
-* Наставник: `Неизвестно`.
+- Студент: [Tikhon Izmailov](https://up.htmlacademy.ru/ecmascript/11/user/967107).
+- Наставник: `NoName`.
 
 ---
 
