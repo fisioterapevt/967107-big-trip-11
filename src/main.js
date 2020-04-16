@@ -5,6 +5,8 @@ import {createTripFilterTemplate} from './components/trip-filter';
 import {createTripSortItemTemplate} from './components/trip-sort-item';
 import {createTripDaysTemplate} from './components/trip-days';
 
+const DAYS_COUNT = 5;
+
 const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
@@ -23,5 +25,10 @@ render(siteMainNavigationElement, createTripFilterTemplate());
 // - путешествия
 const siteTripEventsElement = document.querySelector(`.trip-events`);
 render(siteTripEventsElement, createTripSortItemTemplate());
-render(siteTripEventsElement, createTripDaysTemplate());
+// - отрисовывает дни
+
+for (let i = 1; i < DAYS_COUNT; i++) {
+  render(siteTripEventsElement, createTripDaysTemplate());
+}
+
 
