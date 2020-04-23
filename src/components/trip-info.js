@@ -1,4 +1,5 @@
-import {createElement} from "../utils.js";
+import AbstractComponent from "./abstract-component.js";
+
 
 const createInfoMainTemplate = (title, date) => {
   return (
@@ -10,7 +11,7 @@ const createInfoMainTemplate = (title, date) => {
 };
 
 const createInfoTemplate = (cost) => {
-  const TripInfoMain = createInfoMainTemplate();
+  const TripInfoMain = createInfoMainTemplate(`title`, `21/10/2020`);
   return (
     `<section class="trip-main__trip-info  trip-info">
       ${TripInfoMain}
@@ -20,24 +21,13 @@ const createInfoTemplate = (cost) => {
     </section>`);
 };
 
-export default class Info {
-  constructor() {
-    this._element = null;
+export default class Info extends AbstractComponent {
+  constructor(cost) {
+    super();
+    this._cost = cost;
   }
 
   getTemplate() {
-    return createInfoTemplate();
+    return createInfoTemplate(this._cost);
   }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
-  }
-
 }

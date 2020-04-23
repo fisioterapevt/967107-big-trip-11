@@ -1,4 +1,4 @@
-import {TYPE_EVENT, CITY_EVENT} from '../const';
+import {TYPE_EVENT, CITY_EVENT} from '../utils/const';
 
 const getRandomArrayItem = (array) => {
   const randomIndex = getRandomIntegerNumber(0, array.length);
