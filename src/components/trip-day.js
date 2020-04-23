@@ -1,5 +1,6 @@
-import {createElement} from "../utils.js";
-import {MONTH_NAMES} from '../const';
+import AbstractComponent from "./abstract-component.js";
+
+import {MONTH_NAMES} from '../utils/const';
 import {getRandomDate} from '../mocks/trip-data';
 
 const createTripEvent = (events) => {
@@ -62,25 +63,8 @@ const createTripDay = (events, number) => {
     `);
 };
 
-export default class TripDay {
-  constructor(events, number) {
-    this._element = null;
-    this._events = events;
-    this._number = number;
-  }
-
+export default class TripDay extends AbstractComponent {
   getTemplate() {
     return createTripDay(this._events, this._number);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }
